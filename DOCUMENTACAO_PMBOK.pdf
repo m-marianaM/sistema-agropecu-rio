@@ -1,0 +1,228 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+>>
+>>
+>>
+endobj
+4 0 obj
+<<
+/Length 3500
+>>
+stream
+BT
+/F1 24 Tf
+50 750 Td
+(SISTEMA AGROPECUÁRIO - Documentação Executiva) Tj
+ET
+BT
+/F2 12 Tf
+50 720 Td
+(Visão Geral do Projeto) Tj
+ET
+BT
+/F2 11 Tf
+50 700 Td
+(Nome: Sistema Agropecuário - Gestão Inteligente de Fazendas) Tj
+ET
+BT
+50 685 Td
+(Descrição: Plataforma digital integrada para gerenciamento completo de operações) Tj
+ET
+BT
+50 670 Td
+(agrícolas e pecuárias, permitindo otimização de recursos e monitoramento em tempo real.) Tj
+ET
+BT
+50 655 Td
+(Objetivo Principal: Fornecer uma solução web robusta que integre todas as áreas) Tj
+ET
+BT
+50 640 Td
+(operacionais de uma fazenda em uma única plataforma intuitiva.) Tj
+ET
+BT
+/F2 12 Tf
+50 610 Td
+(Justificativa e Problema) Tj
+ET
+BT
+/F2 11 Tf
+50 590 Td
+(Desafios na Agricultura Tradicional:) Tj
+ET
+BT
+50 575 Td
+(- Fragmentação de dados em múltiplos sistemas) Tj
+ET
+BT
+50 560 Td
+(- Falta de visibilidade em tempo real das operações) Tj
+ET
+BT
+50 545 Td
+(- Processos manuais e propensos a erros) Tj
+ET
+BT
+50 530 Td
+(- Dificuldade na análise de performance e ROI) Tj
+ET
+BT
+50 510 Td
+(Solução Proposta:) Tj
+ET
+BT
+50 495 Td
+(- Centralizar e automatizar a gestão agrícola) Tj
+ET
+BT
+50 480 Td
+(- Dashboard unificado com visibilidade total) Tj
+ET
+BT
+50 465 Td
+(- Relatórios inteligentes e preditivos) Tj
+ET
+BT
+50 450 Td
+(- Integração de múltiplos módulos funcionais) Tj
+ET
+BT
+/F2 12 Tf
+50 420 Td
+(Objetivos do Projeto) Tj
+ET
+BT
+/F2 11 Tf
+50 400 Td
+(Estratégicos:) Tj
+ET
+BT
+50 385 Td
+(1. Aumentar Eficiência Operacional em 40%) Tj
+ET
+BT
+50 370 Td
+(2. Reduzir Custos identificando desperdícios) Tj
+ET
+BT
+50 355 Td
+(3. Melhorar Tomada de Decisão com dados em tempo real) Tj
+ET
+BT
+50 340 Td
+(4. Escalabilidade para diversos tamanhos de fazendas) Tj
+ET
+BT
+/F2 11 Tf
+50 320 Td
+(Técnicos:) Tj
+ET
+BT
+50 305 Td
+(- API REST robusta com Node.js) Tj
+ET
+BT
+50 290 Td
+(- Interface responsiva com React) Tj
+ET
+BT
+50 275 Td
+(- Banco de dados relacional com Prisma ORM) Tj
+ET
+BT
+50 260 Td
+(- Segurança e autenticação adequadas) Tj
+ET
+BT
+50 245 Td
+(- Documentação e testes com 80%+ de cobertura) Tj
+ET
+BT
+/F2 12 Tf
+50 215 Td
+(Escopo do Projeto) Tj
+ET
+BT
+/F2 11 Tf
+50 195 Td
+(Módulos Inclusos:) Tj
+ET
+BT
+50 180 Td
+(1. Gestão de Plantios: Cadastro, planejamento, monitoramento) Tj
+ET
+BT
+50 165 Td
+(2. Gestão de Rebanho: Cadastro, rastreamento, relatórios zootécnicos) Tj
+ET
+BT
+50 150 Td
+(3. Gestão de Recursos: Máquinas, combustível, manutenção) Tj
+ET
+BT
+50 135 Td
+(4. Gestão Financeira: Custos, receitas, fluxo de caixa, ROI) Tj
+ET
+BT
+50 120 Td
+(5. Dashboard e Relatórios: KPIs, gráficos, alertas) Tj
+ET
+BT
+50 100 Td
+(Excluído (Fases Futuras): IoT, Machine Learning, Aplicativo Mobile Nativo) Tj
+ET
+endstream
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+6 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000214 00000 n 
+0000003765 00000 n 
+0000003844 00000 n 
+trailer
+<<
+/Size 7
+/Root 1 0 R
+>>
+startxref
+3923
+%%EOF
