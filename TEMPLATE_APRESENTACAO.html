@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Agropecuário - Apresentação Executiva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background: #ECF0F1;
+            overflow-x: hidden;
+        }
+        
+        .slide {
+            width: 100%;
+            height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            position: relative;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .slide.active {
+            display: flex;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Paleta de Cores */
+        .verde-escuro { color: #2D6A4F; }
+        .verde-claro { color: #52B788; }
+        .laranja { color: #FF9F1C; }
+        .azul { color: #4A90E2; }
+        .cinza-escuro { color: #2C3E50; }
+        
+        .bg-verde { background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%); }
+        .bg-white { background: #FFFFFF; }
+        
+        /* Slide 1: Capa */
+        .slide-capa {
+            background: linear-gradient(rgba(45, 106, 79, 0.7), rgba(45, 106, 79, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23D8F3DC" width="1200" height="800"/><path fill="%2352B788" opacity="0.3" d="M0 400 Q300 300 600 400 T1200 400 L1200 800 L0 800 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .slide-capa h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .slide-capa h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        .slide-capa p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        /* Slides Conteúdo */
+        .slide-content {
+            background: white;
+            text-align: left;
+            justify-content: flex-start;
+            padding-top: 100px;
+        }
+        
+        h2 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            color: #2C3E50;
+        }
+        
+        h3 {
+            font-size: 28px;
+            margin: 30px 0 20px 0;
+            color: #2D6A4F;
+        }
+        
+        .content-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .content-left, .content-right {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        li {
+            font-size: 18px;
+            margin: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #2C3E50;
+            line-height: 1.6;
+        }
+        
+        li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #52B788;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        /* Cards KPI */
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .kpi-card {
+            background: linear-gradient(135deg, #D8F3DC 0%, #52B788 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+        }
+        
+        .kpi-card h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .kpi-value {
+            font-size: 36px;
+            font-weight: 700;
+        }
+        
+        /* Navegação */
+        .slide-nav {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+        
+        button {
+            background: #2D6A4F;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: #1F4D38;
+            transform: translateY(-2px);
+        }
+        
+        .slide-counter {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            background: #2D6A4F;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        /* Tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background: #2D6A4F;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ECF0F1;
+        }
+        
+        tr:hover {
+            background: #D8F3DC;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #2D6A4F;
+            border-radius: 50%;
+        }
+        
+        .timeline-item:after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: 30px;
+            background: #52B788;
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .slide-nav, .slide-counter {
+                display: none;
+            }
+            .slide {
+                display: flex !important;
+                page-break-after: always;
+                height: auto;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SLIDE 1: CAPA -->
+    <div class="slide slide-capa active">
+        <h1>🌾 SISTEMA AGROPECUÁRIO</h1>
+        <h2>Gestão Inteligente de Fazendas</h2>
+        <p style="font-size: 20px; margin-top: 40px;">React • Node.js • Prisma</p>
+        <p style="font-size: 16px; margin-top: 60px;">Apresentação Executiva</p>
+        <p style="font-size: 14px;">Junho de 2026</p>
+    </div>
+
+    <!-- SLIDE 2: AGENDA -->
+    <div class="slide slide-content">
+        <h2>📋 AGENDA</h2>
+        <div style="max-width: 900px;">
+            <h3 style="color: #FF9F1C; margin-top: 40px;">1. 🎯 Problema e Oportunidade</h3>
+            <p style="font-size: 18px; margin-left: 20px;">O que impulsiona o projeto</p>
+            
+            <h3 style="color: #4A90E2; margin-top: 30px;">2. 💡 Solução Proposta</h3>
+            <p style="font-size: 18px; margin-left: 20px;">Sistema Agropecuário em detalhes</p>
+            
+            <h3 style="color: #2D6A4F; margin-top: 30px;">3. 🏗️ Arquitetura Técnica</h3>
+            <p style="font-size: 18px; margin-left: 20px;">Stack e componentes</p>
+            
+            <h3 style="color: #52B788; margin-top: 30px;">4. 📅 Plano de Implementação</h3>
+            <p style="font-size: 18px; margin-left: 20px;">Timeline e fases</p>
+            
+            <h3 style="color: #FF9F1C; margin-top: 30px;">5. 💰 Investimento e ROI</h3>
+            <p style="font-size: 18px; margin-left: 20px;">Custos e retorno esperado</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: PROBLEMA -->
+    <div class="slide slide-content">
+        <h2>❌ DESAFIOS NA AGRICULTURA TRADICIONAL</h2>
+        <div class="content-container">
+            <div class="content-left">
+                <h3>Problemas Identificados</h3>
+                <ul style="margin-top: 30px;">
+                    <li style="list-style: none; padding: 0; margin: 20px 0;">
+                        <span style="color: #E74C3C; font-size: 24px; margin-right: 15px;">✗</span>
+                        <span><strong>Fragmentação de Dados:</strong> Múltiplos sistemas sem integração</span>
+                    </li>
+                    <li style="list-style: none; padding: 0; margin: 20px 0;">
+                        <span style="color: #E74C3C; font-size: 24px; margin-right: 15px;">✗</span>
+                        <span><strong>Falta de Visibilidade:</strong> Informações dispersas</span>
+                    </li>
+                    <li style="list-style: none; padding: 0; margin: 20px 0;">
+                        <span style="color: #E74C3C; font-size: 24px; margin-right: 15px;">✗</span>
+                        <span><strong>Processos Manuais:</strong> Alto custo e erros frequentes</span>
+                    </li>
+                    <li style="list-style: none; padding: 0; margin: 20px 0;">
+                        <span style="color: #E74C3C; font-size: 24px; margin-right: 15px;">✗</span>
+                        <span><strong>Sem Análise Preditiva:</strong> Dificuldade em antecipar problemas</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <h3>Solução Proposta</h3>
+                <ul style="margin-top: 30px;">
+                    <li style="list-style: none; padding: 0; margin: 20px 0;">
+                        <span style="color: #27AE60; font-size: 24px; margin-right: 15px;">✓</span>
+                        <span><strong>Dashboard Unificado:</strong> Visão completa em uma plataforma</span>
+                    </li>
+                    <li style="list-style: none; padding: 0; margin: 20px 0;">
+                        <span style="color: #27AE60; font-size: 24px; margin-right: 15px;">✓</span>
+                        <span><strong>Coleta em Tempo Real:</strong> Dados sempre atualizados</span>
+                    </li>
+                    <li style="list-style: none; padding: 0; margin: 20px 0;">
+                        <span style="color: #27AE60; font-size: 24px; margin-right: 15px;">✓</span>
+                        <span><strong>Relatórios Inteligentes:</strong> Análise preditiva</span>
+                    </li>
+                    <li style="list-style: none; padding: 0; margin: 20px 0;">
+                        <span style="color: #27AE60; font-size: 24px; margin-right: 15px;">✓</span>
+                        <span><strong>Integração Completa:</strong> Todos os módulos interconectados</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: OBJETIVOS -->
+    <div class="slide slide-content">
+        <h2>🎯 OBJETIVOS DO PROJETO</h2>
+        <div style="max-width: 1000px;">
+            <h3>Estratégicos</h3>
+            <div class="kpi-container" style="grid-template-columns: 1fr 1fr; margin: 30px 0;">
+                <div class="kpi-card" style="background: linear-gradient(135deg, #FFE5CC 0%, #FF9F1C 100%);">
+                    <h4>Aumentar Eficiência</h4>
+                    <p class="kpi-value">40%</p>
+                </div>
+                <div class="kpi-card" style="background: linear-gradient(135deg, #D4E7F7 0%, #4A90E2 100%);">
+                    <h4>Reduzir Custos</h4>
+                    <p class="kpi-value">35%</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 40px;">Técnicos</h3>
+            <ul style="margin-top: 20px;">
+                <li>API REST robusta e escalável com Node.js</li>
+                <li>Interface responsiva com React + TypeScript</li>
+                <li>Banco de dados relacional com Prisma ORM</li>
+                <li>Segurança e autenticação JWT</li>
+                <li>80%+ cobertura de testes automatizados</li>
+            </ul>
+            
+            <h3 style="margin-top: 40px;">Critérios de Sucesso</h3>
+            <ul style="margin-top: 20px;">
+                <li>5+ módulos funcionais</li>
+                <li>Tempo resposta &lt;500ms (P95)</li>
+                <li>99%+ uptime em produção</li>
+                <li>100% aceitação de usuários beta</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: ESCOPO -->
+    <div class="slide slide-content">
+        <h2>📦 ESCOPO DO PROJETO</h2>
+        <div class="content-container">
+            <div class="content-left">
+                <h3>Módulos Inclusos</h3>
+                <ul style="margin-top: 20px;">
+                    <li><strong>Gestão de Plantios:</strong> Talhões, planejamento, monitoramento</li>
+                    <li><strong>Gestão de Rebanho:</strong> Animais, saúde, reprodução</li>
+                    <li><strong>Gestão de Recursos:</strong> Máquinas, combustível, manutenção</li>
+                    <li><strong>Gestão Financeira:</strong> Custos, receitas, ROI</li>
+                    <li><strong>Dashboard e Relatórios:</strong> KPIs, gráficos, alertas</li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <h3>Excluído (Fases Futuras)</h3>
+                <ul style="margin-top: 20px;">
+                    <li>Integração com dispositivos IoT</li>
+                    <li>Machine Learning preditivo</li>
+                    <li>Aplicativo mobile nativo</li>
+                    <li>Integração com SAP/ERP legado</li>
+                </ul>
+                <div style="background: #D8F3DC; padding: 20px; border-radius: 8px; margin-top: 40px;">
+                    <p style="font-size: 14px; color: #2D6A4F;">
+                        <strong>Nota:</strong> Funcionalidades futuras estão planejadas para Fase 2 e 3
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: ARQUITETURA -->
+    <div class="slide slide-content">
+        <h2>🏗️ ARQUITETURA TÉCNICA</h2>
+        <div style="max-width: 1000px;">
+            <div style="background: linear-gradient(135deg, #D8F3DC 0%, #52B788 100%); padding: 30px; border-radius: 12px; margin: 30px 0; color: white;">
+                <h3 style="color: white; margin-top: 0;">Frontend</h3>
+                <p style="font-size: 16px; margin: 10px 0;">React.js + TypeScript + Material-UI</p>
+                <ul style="margin-top: 15px;">
+                    <li style="color: white;">Dashboard interativo com gráficos em tempo real</li>
+                    <li style="color: white;">Formulários dinâmicos e validação client-side</li>
+                    <li style="color: white;">Interface responsiva mobile-first</li>
+                </ul>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #D1ECF1 0%, #4A90E2 100%); padding: 30px; border-radius: 12px; margin: 30px 0; color: white;">
+                <h3 style="color: white; margin-top: 0;">Backend</h3>
+                <p style="font-size: 16px; margin: 10px 0;">Node.js + Express.js</p>
+                <ul style="margin-top: 15px;">
+                    <li style="color: white;">API REST RESTful com documentação OpenAPI</li>
+                    <li style="color: white;">Autenticação JWT e autorização por papel</li>
+                    <li style="color: white;">Validação de dados e rate limiting</li>
+                </ul>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #ECF0F1 0%, #95A5A6 100%); padding: 30px; border-radius: 12px; margin: 30px 0; color: white;">
+                <h3 style="color: white; margin-top: 0;">Database</h3>
+                <p style="font-size: 16px; margin: 10px 0;">PostgreSQL + Prisma ORM</p>
+                <ul style="margin-top: 15px;">
+                    <li style="color: white;">Banco de dados relacional ACID compliant</li>
+                    <li style="color: white;">Migrations automáticas com versionamento</li>
+                    <li style="color: white;">Backup diário geo-redundante</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: TIMELINE -->
+    <div class="slide slide-content">
+        <h2>📅 FASES E TIMELINE (6 MESES)</h2>
+        <div style="max-width: 1000px;">
+            <div class="timeline" style="margin-top: 40px;">
+                <div class="timeline-item">
+                    <div style="margin-left: 20px;">
+                        <h3 style="margin: 0; color: #2D6A4F;">Fase 1: MVP (Semanas 1-8)</h3>
+                        <p style="margin: 10px 0; font-size: 16px; color: #2C3E50;">
+                            Autenticação, Plantios, Rebanho, Dashboard básico, Deploy Beta
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div style="margin-left: 20px;">
+                        <h3 style="margin: 0; color: #2D6A4F;">Fase 2: Expansão (Semanas 9-16)</h3>
+                        <p style="margin: 10px 0; font-size: 16px; color: #2C3E50;">
+                            Módulo Recursos, Financeiro, Web Responsivo, Integrações
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div style="margin-left: 20px;">
+                        <h3 style="margin: 0; color: #2D6A4F;">Fase 3: Otimização (Semanas 17-24)</h3>
+                        <p style="margin: 10px 0; font-size: 16px; color: #2C3E50;">
+                            ML Preditivo, IoT Ready, Performance Tuning, Enterprise Ready
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: #FFE5CC; padding: 20px; border-radius: 8px; margin-top: 40px; border-left: 4px solid #FF9F1C;">
+                <h4 style="color: #FF9F1C; margin: 0;">Milestones Principais</h4>
+                <p style="font-size: 14px; margin: 10px 0 0 0; color: #2C3E50;">⭐ Beta Público (Semana 8) • ⭐ Produção (Semana 16) • ⭐ Enterprise (Semana 24)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: EQUIPE -->
+    <div class="slide slide-content">
+        <h2>👥 ESTRUTURA ORGANIZACIONAL</h2>
+        <div style="max-width: 1000px; margin-top: 40px;">
+            <div style="background: #D8F3DC; padding: 30px; border-radius: 12px; margin-bottom: 30px;">
+                <h3 style="margin-top: 0; color: #2D6A4F;">Composição da Equipe (10-11 pessoas)</h3>
+                <table style="margin-top: 20px; font-size: 14px;">
+                    <tr>
+                        <th>Papel</th>
+                        <th>Quantidade</th>
+                        <th>Responsabilidades</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Project Manager</strong></td>
+                        <td>1</td>
+                        <td>Coordenação geral, stakeholders, riscos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tech Lead Backend</strong></td>
+                        <td>1</td>
+                        <td>Arquitetura, decisões técnicas, mentoring</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Backend Developers</strong></td>
+                        <td>2</td>
+                        <td>Implementação APIs, testes, documentação</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tech Lead Frontend</strong></td>
+                        <td>1</td>
+                        <td>Arquitetura componentes, performance, design system</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Frontend Developers</strong></td>
+                        <td>2</td>
+                        <td>Desenvolvimento interfaces, testes, otimização</td>
+                    </tr>
+                    <tr>
+                        <td><strong>UI/UX Designer</strong></td>
+                        <td>1</td>
+                        <td>Wireframes, design system, user research</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DevOps Engineer</strong></td>
+                        <td>1</td>
+                        <td>Infraestrutura, CI/CD, monitoring, segurança</td>
+                    </tr>
+                    <tr>
+                        <td><strong>QA Engineer</strong></td>
+                        <td>1</td>
+                        <td>Testes funcionais, automação, relatórios</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product Owner</strong></td>
+                        <td>1</td>
+                        <td>Requisitos, priorização, aceitação features</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DBA (Part-time)</strong></td>
+                        <td>0.5</td>
+                        <td>Database tuning, backups, scaling, indexing</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div style="background: #FFE5CC; padding: 20px; border-radius: 8px; border-left: 4px solid #FF9F1C;">
+                <p style="font-size: 14px; margin: 0; color: #2C3E50;">
+                    <strong>Orçamento Mensal (Pessoal):</strong> R$ 850k-900k | <strong>Total 6 meses:</strong> R$ 5.1M - 5.4M
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: RISCOS -->
+    <div class="slide slide-content">
+        <h2>⚠️ RISCOS E MITIGAÇÃO</h2>
+        <div style="max-width: 1000px; margin-top: 30px; overflow-x: auto;">
+            <table style="font-size: 13px;">
+                <tr>
+                    <th>Risco</th>
+                    <th>Probabilidade</th>
+                    <th>Impacto</th>
+                    <th>Mitigação</th>
+                </tr>
+                <tr>
+                    <td><strong>Escopo creep</strong></td>
+                    <td style="background: #FFE5CC;">ALTA (70%)</td>
+                    <td style="background: #FFE5CC;">ALTO</td>
+                    <td>Gate de mudanças formais, planejamento MVP rigoroso</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance insuficiente</strong></td>
+                    <td style="background: #FFE5CC;">MÉD (40%)</td>
+                    <td style="background: #FFE5CC;">ALTO</td>
+                    <td>Testes de carga frequentes, APM desde início</td>
+                </tr>
+                <tr>
+                    <td><strong>Comunicação deficiente</strong></td>
+                    <td style="background: #FFF3CD;">MÉD (50%)</td>
+                    <td style="background: #FFF3CD;">MÉD</td>
+                    <td>Daily standups, wiki centralizado, retrospectives</td>
+                </tr>
+                <tr>
+                    <td><strong>Mudanças de requisitos</strong></td>
+                    <td style="background: #FFE5CC;">ALTA (65%)</td>
+                    <td style="background: #FFE5CC;">ALTO</td>
+                    <td>Sprints curtos, feedback constante com PO</td>
+                </tr>
+                <tr>
+                    <td><strong>Turnover técnico</strong></td>
+                    <td style="background: #FFF3CD;">MÉD (35%)</td>
+                    <td style="background: #FFE5CC;">ALTO</td>
+                    <td>Documentação abrangente, programa mentoring</td>
+                </tr>
+                <tr>
+                    <td><strong>Segurança (SQL injection)</strong></td>
+                    <td style="background: #D4EDDA;">BAIXA (10%)</td>
+                    <td style="background: #F8D7DA;">CRÍTICO</td>
+                    <td>Prisma ORM, code review mandatório, SAST</td>
+                </tr>
+                <tr>
+                    <td><strong>Perda de dados</strong></td>
+                    <td style="background: #D4EDDA;">BAIXA (5%)</td>
+                    <td style="background: #F8D7DA;">CRÍTICO</td>
+                    <td>Backup diário, replicação geo-redundante, testes restore</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: KPIs -->
+    <div class="slide slide-content">
+        <h2>📊 MÉTRICAS E KPIs DE SUCESSO</h2>
+        <div style="max-width: 1000px;">
+            <h3>Métricas de Projeto</h3>
+            <div class="kpi-container" style="grid-template-columns: repeat(3, 1fr); margin: 30px 0;">
+                <div class="kpi-card">
+                    <p style="font-size: 14px; margin: 0;">Burndown Velocity</p>
+                    <p class="kpi-value">25-30</p>
+                    <p style="font-size: 12px; margin: 0;">story points/sprint</p>
+                </div>
+                <div class="kpi-card">
+                    <p style="font-size: 14px; margin: 0;">On-time Delivery</p>
+                    <p class="kpi-value">>95%</p>
+                    <p style="font-size: 12px; margin: 0;">sprints</p>
+                </div>
+                <div class="kpi-card">
+                    <p style="font-size: 14px; margin: 0;">Code Coverage</p>
+                    <p class="kpi-value">>80%</p>
+                    <p style="font-size: 12px; margin: 0;">testes</p>
+                </div>
+            </div>
+            
+            <h3>Métricas Técnicas</h3>
+            <ul style="margin-top: 20px; columns: 2;">
+                <li><strong>API Response Time:</strong> P95 &lt;500ms</li>
+                <li><strong>Error Rate:</strong> &lt;0.1% de requisições</li>
+                <li><strong>Uptime:</strong> &gt;99% (≤8h downtime/mês)</li>
+                <li><strong>DB Query Time:</strong> P95 &lt;200ms</li>
+                <li><strong>Frontend Load:</strong> &lt;3s (FCP)</li>
+            </ul>
+            
+            <h3 style="margin-top: 30px;">Métricas de Usuário</h3>
+            <ul style="margin-top: 20px; columns: 2;">
+                <li><strong>User Adoption:</strong> ≥80% ativos diários</li>
+                <li><strong>Feature Usage:</strong> 100% dos módulos</li>
+                <li><strong>User Satisfaction:</strong> NPS &gt;50</li>
+                <li><strong>Support Tickets:</strong> &lt;2 por user/mês</li>
+                <li><strong>Time Saved:</strong> ≥30 horas/mês por user</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: INVESTIMENTO -->
+    <div class="slide slide-content">
+        <h2>💰 INVESTIMENTO E ROI</h2>
+        <div style="max-width: 1000px;">
+            <h3>Investimento Fase 1 (MVP - 2 meses)</h3>
+            <table style="margin-top: 20px; font-size: 14px;">
+                <tr>
+                    <th colspan="2">Custos</th>
+                </tr>
+                <tr>
+                    <td><strong>Pessoal (8 semanas)</strong></td>
+                    <td style="text-align: right;"><strong>R$ 58.000</strong></td>
+                </tr>
+                <tr>
+                    <td>Tech Leads, Developers, QA, DevOps, PM</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>Infraestrutura</strong></td>
+                    <td style="text-align: right;"><strong>R$ 4.500</strong></td>
+                </tr>
+                <tr>
+                    <td>Cloud (AWS), Database, Monitoring, Tools</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>Outros (Licenças, Docs, Contingência 10%)</strong></td>
+                    <td style="text-align: right;"><strong>R$ 9.500</strong></td>
+                </tr>
+                <tr style="background: #D8F3DC; font-weight: bold;">
+                    <td>TOTAL FASE 1</td>
+                    <td style="text-align: right;">R$ 72.000</td>
+                </tr>
+                <tr style="background: #ECF0F1;">
+                    <td><strong>TOTAL 6 MESES (3 fases)</strong></td>
+                    <td style="text-align: right;"><strong>R$ 216.000-240.000</strong></td>
+                </tr>
+            </table>
+            
+            <h3 style="margin-top: 40px;">Retorno Esperado (Ano 1)</h3>
+            <div class="kpi-container" style="grid-template-columns: 1fr 1fr; margin: 30px 0;">
+                <div class="kpi-card" style="background: linear-gradient(135deg, #D4EDDA 0%, #27AE60 100%);">
+                    <h4>ROI</h4>
+                    <p class="kpi-value">440%</p>
+                </div>
+                <div class="kpi-card" style="background: linear-gradient(135deg, #D1ECF1 0%, #3498DB 100%);">
+                    <h4>Payback</h4>
+                    <p class="kpi-value">2.2</p>
+                    <p style="font-size: 14px; margin: 0;">meses</p>
+                </div>
+            </div>
+            
+            <ul style="margin-top: 20px;">
+                <li>Economia operacional: R$ 600k/ano</li>
+                <li>Aumento produtividade: R$ 400k/ano</li>
+                <li>Redução desperdícios: R$ 300k/ano</li>
+                <li><strong>Total economia: R$ 1.3M/ano</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Navegação -->
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">11</span>
+    </div>
+    
+    <div class="slide-nav">
+        <button onclick="previousSlide()">← Anterior</button>
+        <button onclick="nextSlide()">Próximo →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+    </script>
+</body>
+</html>
