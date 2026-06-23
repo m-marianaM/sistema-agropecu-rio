@@ -1,0 +1,156 @@
+PK     !!              -  mimetype mimetypeapplication/vnd.oasis.opendocument.presentationPK     !!   t      META-INF/manifest.xml<?xml version="1.0" encoding="UTF-8"?>
+<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0">
+ <manifest:file-entry manifest:media-type="application/vnd.oasis.opendocument.presentation" manifest:full-path="/"/>
+ <manifest:file-entry manifest:media-type="text/xml" manifest:full-path="content.xml"/>
+ <manifest:file-entry manifest:media-type="text/xml" manifest:full-path="styles.xml"/>
+ <manifest:file-entry manifest:media-type="text/xml" manifest:full-path="meta.xml"/>
+ <manifest:file-entry manifest:media-type="text/xml" manifest:full-path="settings.xml"/>
+</manifest:manifest>
+PK     !!         meta.xml<?xml version="1.0" encoding="UTF-8"?>
+<office:document-meta xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <office:meta>
+  <dc:title>Sistema Agropecuário - Apresentação Executiva</dc:title>
+  <dc:subject>Gestão Inteligente de Fazendas</dc:subject>
+  <dc:creator>m-marianaM</dc:creator>
+  <meta:creation-date>2026-06-23T21:30:00Z</meta:creation-date>
+ </office:meta>
+</office:document-meta>
+PK     !!         settings.xml<?xml version="1.0" encoding="UTF-8"?>
+<office:document-settings xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0">
+ <office:settings>
+  <config:config-item-set config:name="ooo:view-settings">
+   <config:config-item config:name="VisibleArea" config:type="string">0,0,28346,21336</config:config-item>
+  </config:config-item-set>
+ </office:settings>
+</office:document-settings>
+PK     !!         styles.xml<?xml version="1.0" encoding="UTF-8"?>
+<office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <office:styles>
+  <style:default-style style:family="graphic">
+   <style:graphic-properties svg:stroke-color="#000000"/>
+  </style:default-style>
+  <style:default-style style:family="paragraph">
+   <style:paragraph-properties/>
+  </style:default-style>
+  <style:style style:name="Title1" style:family="paragraph" style:parent-style-name="Heading">
+   <style:paragraph-properties fo:margin-top="0.423cm" fo:margin-bottom="0.212cm" style:contextual-spacing="false" fo:line-height="100%"/>
+   <style:text-properties style:font-size-asian="44pt" style:font-name="Helvetica" fo:font-size="44pt" fo:font-weight="bold" fo:color="#2D6A4F"/>
+  </style:style>
+  <style:style style:name="Title2" style:family="paragraph" style:parent-style-name="Heading">
+   <style:text-properties style:font-size-asian="32pt" style:font-name="Helvetica" fo:font-size="32pt" fo:font-weight="bold" fo:color="#2D6A4F"/>
+  </style:style>
+  <style:style style:name="Subtitle" style:family="paragraph">
+   <style:text-properties style:font-size-asian="24pt" style:font-name="Helvetica" fo:font-size="24pt" fo:color="#52B788"/>
+  </style:style>
+  <style:style style:name="Body" style:family="paragraph">
+   <style:text-properties style:font-size-asian="14pt" style:font-name="Helvetica" fo:font-size="14pt" fo:color="#2C3E50"/>
+  </style:style>
+ </office:styles>
+</office:document-styles>
+PK     !!         content.xml<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <office:presentation>
+  <draw:page draw:name="Slide 1">
+   <draw:rect svg:x="0cm" svg:y="0cm" svg:width="25.4cm" svg:height="19.05cm" draw:fill="solid" draw:fill-color="#2D6A4F"/>
+   <text:p style:style-name="Title1"><text:span>🌾 SISTEMA AGROPECUÁRIO</text:span></text:p>
+   <text:p style:style-name="Subtitle"><text:span>Gestão Inteligente de Fazendas</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>React • Node.js • Prisma</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 2">
+   <text:h style:style-name="Title2"><text:span>📋 AGENDA</text:span></text:h>
+   <text:p style:style-name="Body"><text:span>1. 🎯 Problema e Oportunidade</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>2. 💡 Solução Proposta</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>3. 🏗️ Arquitetura Técnica</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>4. 📅 Plano de Implementação</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>5. 💰 Investimento e ROI</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 3">
+   <text:h style:style-name="Title2"><text:span>❌ DESAFIOS IDENTIFICADOS</text:span></text:h>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Fragmentação de Dados:</text:span> Múltiplos sistemas sem integração</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Falta de Visibilidade:</text:span> Informações dispersas, decisões lentas</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Processos Manuais:</text:span> Alto custo operacional e erros frequentes</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">ROI Invisível:</text:span> Impossível medir retorno por atividade</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 4">
+   <text:h style:style-name="Title2"><text:span>💡 SOLUÇÃO PROPOSTA</text:span></text:h>
+   <text:p style:style-name="Body"><text:span>✓ Dashboard unificado em uma plataforma integrada</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>✓ Coleta e análise de dados em tempo real</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>✓ Relatórios inteligentes e preditivos</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>✓ Integração de múltiplos módulos funcionais</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 5">
+   <text:h style:style-name="Title2"><text:span>🎯 OBJETIVOS DO PROJETO</text:span></text:h>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Estratégicos:</text:span></text:span></text:p>
+   <text:p style:style-name="Body"><text:span>1. Aumentar Eficiência Operacional em 40%</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>2. Reduzir Custos identificando desperdícios</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>3. Melhorar Tomada de Decisão com dados em tempo real</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Técnicos:</text:span></text:span></text:p>
+   <text:p style:style-name="Body"><text:span>• API REST robusta com Node.js • Interface React responsiva</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>• Banco de dados PostgreSQL • Segurança com JWT</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 6">
+   <text:h style:style-name="Title2"><text:span>📦 ESCOPO DO PROJETO</text:span></text:h>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Módulos Inclusos:</text:span></text:span></text:p>
+   <text:p style:style-name="Body"><text:span>1. Gestão de Plantios (talhões, planejamento, colheita)</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>2. Gestão de Rebanho (animais, saúde, reprodução)</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>3. Gestão de Recursos (máquinas, combustível, manutenção)</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>4. Gestão Financeira (custos, receitas, ROI)</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>5. Dashboard e Relatórios (KPIs, gráficos, alertas)</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 7">
+   <text:h style:style-name="Title2"><text:span>🏗️ ARQUITETURA TÉCNICA</text:span></text:h>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Frontend:</text:span> React.js + TypeScript + Material-UI</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>Dashboard interativo, formulários dinâmicos, gráficos</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Backend:</text:span> Node.js + Express.js + JWT</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>API REST RESTful, validação de dados, lógica de negócio</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Database:</text:span> PostgreSQL + Prisma ORM</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>Banco relacional, migrations automáticas, backups diários</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 8">
+   <text:h style:style-name="Title2"><text:span>📅 FASES E TIMELINE (6 MESES)</text:span></text:h>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Fase 1 - MVP (Semanas 1-8):</text:span></text:span></text:p>
+   <text:p style:style-name="Body"><text:span>Autenticação, Plantios, Rebanho, Dashboard, Deploy Beta</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Fase 2 - Expansão (Semanas 9-16):</text:span></text:span></text:p>
+   <text:p style:style-name="Body"><text:span>Recursos, Financeiro, Web Responsivo, Integrações</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Fase 3 - Otimização (Semanas 17-24):</text:span></text:span></text:p>
+   <text:p style:style-name="Body"><text:span>ML Preditivo, IoT Ready, Performance, Enterprise Ready</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 9">
+   <text:h style:style-name="Title2"><text:span>👥 ESTRUTURA ORGANIZACIONAL</text:span></text:h>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Equipe: 10-11 pessoas</text:span></text:span></text:p>
+   <text:p style:style-name="Body"><text:span>Project Manager (1) • Tech Leads (2) • Developers (4)</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>Designer (1) • DevOps (1) • QA (1) • DBA (0.5)</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Orçamento Mensal:</text:span> R$ 850k-900k</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Total 6 meses:</text:span> R$ 5.1M - 5.4M</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 10">
+   <text:h style:style-name="Title2"><text:span>⚠️ RISCOS E MITIGAÇÃO</text:span></text:h>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Escopo creep</text:span> (70%) → Gate de mudanças formais</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Performance insuficiente</text:span> (40%) → Testes de carga frequentes</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Mudanças de requisitos</text:span> (65%) → Sprints curtos</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Turnover técnico</text:span> (35%) → Documentação abrangente</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Segurança</text:span> (10%) → Prisma ORM, code review</text:span></text:p>
+  </draw:page>
+
+  <draw:page draw:name="Slide 11">
+   <text:h style:style-name="Title2"><text:span>💰 INVESTIMENTO E ROI</text:span></text:h>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Investimento Fase 1 (MVP - 2 meses):</text:span> R$ 72.000</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Total 6 meses (3 fases):</text:span> R$ 216.000-240.000</text:span></text:p>
+   <text:p style:style-name="Body"><text:span><text:span style="font-weight: bold;">Retorno Esperado (Ano 1):</text:span></text:span></text:p>
+   <text:p style:style-name="Body"><text:span>• ROI: 440% • Payback: 2.2 meses</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>• Economia operacional: R$ 600k/ano</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>• Aumento produtividade: R$ 400k/ano</text:span></text:p>
+   <text:p style:style-name="Body"><text:span>• Total economia: R$ 1.3M/ano</text:span></text:p>
+  </draw:page>
+ </office:presentation>
+</office:document-content>
+PK      !  a    
